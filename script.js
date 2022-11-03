@@ -35,6 +35,7 @@ function elegirHorario(value){
         }else if(value == 1){
             horas[i].innerHTML = tarde[i];
         }
-        
     }
 }
+
+
