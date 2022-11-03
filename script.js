@@ -1,12 +1,24 @@
 document.getElementById('window-select').style.display = "none";
 var seleccion;
 var value;
+var materia;
+var materias = [
+    "Enfermeria del adulto", 
+    "El cuidado de enfermeria del adulto", 
+    "Salud en etapa productiva", 
+    "Relacion de ayuda I", 
+    "Ingles V",
+    "Optativa III: Adulto joven critico",
+    "Optativa III: Terapias energeticas del biocampo"
+];
+var dia;
 
-function mostrar(value){
-    var selectButton = document.getElementsByName('seleccionar');
+function mostrar(name, value){
+    var selectButton = document.getElementsByName(name);
+    llenarSelect(name);
     document.getElementById('window-select').style.display = "block";
     seleccion = selectButton[value];
-    console.log(seleccion);
+
 }
 
 var close_button = document.getElementById('close-button');
@@ -17,9 +29,8 @@ close_button.addEventListener("click", function(e) {
 });
 
 function ShowMateria(){
-    var text = document.getElementById('materias');
-    var materia = text.options[text.selectedIndex].text;
-
+    var materias = document.getElementById('materias');
+    materia = materias.options[materias.selectedIndex].text;
     console.log(materia);
     seleccion.innerHTML = materia;
 }
@@ -36,6 +47,72 @@ function elegirHorario(value){
             horas[i].innerHTML = tarde[i];
         }
     }
+}
+
+function llenarSelect(name){
+    //Tu array de materias
+    var select = document.getElementById("materias"); //Seleccionamos el select
+    
+    var cantidad = materias.length;
+
+    if(name == dia){
+        if(materias.length<=7){
+            for(var i=0; i < materias.length; i++){
+                if(materia == materias[i]){
+                    materias.splice(i,1);
+                }
+            }
+        
+            for(var i=select.length; i>=0; i--){
+                select.remove(i);
+            }
+        
+            for(var i=0; i < materias.length; i++){ 
+                var option = document.createElement("option"); //Creamos la opcion
+                option.innerHTML = materias[i]; //Metemos el texto en la opción
+                select.appendChild(option); //Metemos la opción en el select
+            }
+        }else{
+            for(var i=0; i < materias2.length; i++){
+                if(materia == materias2[i]){
+                    materias2.splice(i,1);
+                }
+            }
+        
+            for(var i=select.length; i>=0; i--){
+                select.remove(i);
+            }
+        
+            for(var i=0; i < materias2.length; i++){ 
+                var option = document.createElement("option"); //Creamos la opcion
+                option.innerHTML = materias2[i]; //Metemos el texto en la opción
+                select.appendChild(option); //Metemos la opción en el select
+            }
+        }
+    }else{
+        var materias2 = [
+            "Enfermeria del adulto", 
+            "El cuidado de enfermeria del adulto", 
+            "Salud en etapa productiva", 
+            "Relacion de ayuda I", 
+            "Ingles V",
+            "Optativa III: Adulto joven critico",
+            "Optativa III: Terapias energeticas del biocampo"
+        ];
+
+        for(var i=select.length; i>=0; i--){
+            select.remove(i);
+        }
+        for(var i=0; i < materias2.length; i++){ 
+            var option = document.createElement("option"); //Creamos la opcion
+            option.innerHTML = materias2[i]; //Metemos el texto en la opción
+            select.appendChild(option); //Metemos la opción en el select
+        }
+    }
+    dia = name;
+    console.log(cantidad);
+    
+    console.log(materias);
 }
 
 
