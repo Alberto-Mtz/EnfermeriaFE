@@ -1,0 +1,35 @@
+.QE{
+    text-align: center;
+}
+#M, #T {
+    display: none;
+}
+#boton1, #boton{
+    display: none;
+}
+#O{
+    display: none;
+}
+li{
+list-style-type: none;
+
+}
+.Mañana, .Tarde{
+    transform: scale(1.5);
+}
+#Mañana1, #Tarde1, #Mañana2, #Tarde2{
+    display: none;
+    position: absolute;
+    left: 0px;
+    text-align: center;
+    padding-right: 10px;
+}/*se quiere alinear los grupos con la tabla de horario pero existe un problema*/
+.todo, .todo1{
+position: static;
+left: 0px;
+bottom: 450px;
+margin-top: -400px;
+height: 300px;
+width: 200px;
+border: 1px none solid;
+}

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horarios</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="principal.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="acciones.js">
+</head>
+<body>
+    <!--Marco superior-->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #669934;">
+        <a class="navbar-brand" href="#" style="font-family:Arial, Helvetica, sans-serif; font-size:25px; margin-left: 10px;"><b>Horarios</b><br><span>Universidad de Colima</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: 15px;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown" style="margin-left: 50%;">
+            <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="tablaAlumnos.html">Alumnos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="tablaProfesores.html">Profesores</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Registro de Grupos</a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <form action="" method="get">
+            <!--radiobuton para mostrar el boton de mostrar-->
+            <label for="Mañana"><h2>Turno Matutino</h2></label>&nbsp; <input type="radio" onclick="MB();" class="Mañana" id="Mañana" name="TM">
+        &nbsp;  &nbsp; &nbsp; <label for="Tarde"><h2>Turno Vespertino</h2></label> &nbsp;<input type="radio"  onclick="MM();" class="Tarde" id="Tarde" name="TM"><br>
+        <!-- <Button type="submit" onclick="MB();">VER</Button>--> <br>
+        </form>
+    </div>
+    
+    <!--botones para mostrar y ocultar la tabla de horario, estan deshabilitados 
+    veo un problema lo vemos en la reunion :/-->
+   <!-- --><button id="boton" onclick="mostrar();" hidden>ocultar</button>
+    <button id="boton1" onclick="ocultar();" hidden>Mostrar</button>
+    <div id="M" >
+        <center>
+            <table class="table table-bordered" style="width: 60%;margin-top: 5%;">
+                <thead bgcolor="#669934" style="background-color: #669934;">
+                    <tr>
+                        <th scope="col">5ôE</th>
+                        <th scope="col">Lunes</th>
+                        <th scope="col">Martes</th>
+                        <th scope="col">Miércoles</th>
+                        <th scope="col">Jueves</th>
+                        <th scope="col">Viernes</th>
+                    </tr>
+                </thead>
+                <tbody class="modbtn">
+                    <tr>
+                        <td>7:00 A 8:00</td>
+                        <td>
+                            <!--datalist para mostrar opciones de seleccion-->
+                            <input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome" >
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td>
+                            <input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist>
+                        </td>
+                        <td>
+                            <input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist>
+                        </td>
+                        <td>
+                            <input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist>
+                        </td>
+                        <td>
+                            <input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8:00 A 9:00</td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                    </tr>
+                    <tr>
+                        <td>9:00 A 10:00</td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                    </tr>
+                    <tr>
+                        <td>10:00 A 11:00</td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                    </tr>
+                    <tr>
+                        <td>11:00 A 12:00</td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                    </tr>
+                    <tr>
+                        <td>12:00 A 13:00</td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center></div>
+      
+        <!-- Esta tabla es para cuando el radiobuton sea en la tarde-->
+            <div id="T" >
+        <center>
+            <table class="table table-bordered" style="width: 60%;margin-top: 5%;">
+                <thead bgcolor="#669934" style="background-color: #669934;">
+                    <tr>
+                        <th scope="col">5°E</th>
+                        <th scope="col">Lunes</th>
+                        <th scope="col">Martes</th>
+                        <th scope="col">Miércoles</th>
+                        <th scope="col">Jueves</th>
+                        <th scope="col">Viernes</th>
+                    </tr>
+                </thead>
+                <tbody class="modbtn">
+                    <tr>
+                        <td>13:00 A 14:00</td>
+                        <td>
+                            <input list="una-dos-lunes-t" placeholder="Selecciona"/>
+                            <datalist id="una-dos-lunes-t">
+                            <option value="Ingles I  13:00-15:00" name="Ingles1-3">
+                            <option value="Ingles I  15:00-17:00" name="Ingles3-7">
+                            <option value="Matematicas I  13:00-15:00" name="Mate1-3">
+                            </datalist></td>
+                        <td>
+                            <input list="una-dos-martes-t" placeholder="Selecciona"/>
+                            <datalist id="una-dos-martes-t">
+                            <option value="Español I 12:00-2:00" name="Español1">
+                            <option value="Matematicas 1" name="Matematicas1">
+                            </datalist>
+                        </td>
+                        <td>
+                            <input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist>
+                        </td>
+                        <td>
+                            <input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist>
+                        </td>
+                        <td>
+                            <input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>14:00 A 15:00</td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                    </tr>
+                    <tr>
+                        <td>15:00 A 16:00</td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                    </tr>
+                    <tr>
+                        <td>16:00 A 17:00</td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                    </tr>
+                    <tr>
+                        <td>17:00 A 18:00</td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                    </tr>
+                    <tr>
+                        <td>18:00 A 19:00</td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                    </tr>
+                    <tr>
+                        <td>19:00 A 20:00</td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                        <td><input list="browsers" placeholder="Selecciona"/>
+                            <datalist id="browsers">
+                            <option value="Chrome">
+                            <option value="Firefox">
+                            </datalist></td>
+                    </tr>   
+                </tbody>
+            </table>
+        </center></div>
+    <!--clase todo para validar los radio buttons de los sub-grupos 
+    id-Mañana1 para referir a primeros-->
+    
+        <div class="todo"> 
+            <form action="" method="get">
+        <div id="Mañana1">
+            <ul><!--P representa el grado y la letra el grupo osea: PA primero A, TA tercero A, QA quinto A etc.-->
+                <h3><li>Primeros</li></h3>
+                <li ><label for="PA">A &nbsp;&nbsp;</label><input type="radio" id="PA" name="Primeros" required></li>
+                <li><label for="PB">B &nbsp;&nbsp;</label><input type="radio" id="PB" name="Primeros" required></li>
+                <li><label for="PC">C &nbsp;&nbsp;</label><input type="radio" id="PC" name="Primeros" required></li>
+                <li><label for="PD">D  &nbsp;</label><input type="radio" id="PD" name="Primeros" required></li>
+                <li><label for="PE">E &nbsp;&nbsp;</label><input type="radio" id="PE" name="Primeros" required></li>
+                <li><label for="PF">F &nbsp;&nbsp;</label><input type="radio" id="PF" name="Primeros" required></li>
+                <li><label for="PG">G &nbsp;</label><input type="radio" id="PG" name="Primeros" required></li>
+                <li><label for="PH">H &nbsp;</label><input type="radio" id="PH" name="Primeros" required></li>
+            </ul>
+                <button type="submit" name="Primeros">Guardar</button> 
+            </div>
+        </form>
+        
+        <br><br><br><br><br><br><br><br><br><br> <br><br><br>
+        <form action="" method="get">
+            <div id="Mañana2">
+                <ul>
+                <h3><li>Terceros</li></h3>
+                <li ><label for="TA">A &nbsp;&nbsp;</label><input type="radio" id="TA" name="Terceros" required></li>
+                <li><label for="TB">B &nbsp;&nbsp;</label><input type="radio" id="TB" name="Terceros" required></li>
+                <li><label for="TC">C &nbsp;&nbsp;</label><input type="radio" id="TC" name="Terceros" required></li>
+                <li><label for="TD">D  &nbsp;</label><input type="radio" id="TD" name="Terceros" required></li>
+                <li><label for="TE">E &nbsp;&nbsp;</label><input type="radio" id="TE" name="Terceros" required></li>
+                <li><label for="TF">F &nbsp;&nbsp;</label><input type="radio" id="TF" name="Terceros" required></li>
+                <li><label for="TG">G &nbsp;</label><input type="radio" id="TG" name="Terceros" required></li>
+                <li><label for="TH">H &nbsp;</label><input type="radio"  id="TH" name="Terceros" required></li>
+            </ul><button type="submit" name="Terceros">Guardar2</button>
+        </div>
+    </form>
+</div> 
+        
+    <div class="todo1">
+        <div id="Tarde1">
+            <ul>
+                <h3><li>Quintos</li></h3>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+                <li>E</li>
+                <li>F</li>
+                <li>G</li>
+                <li>H</li>
+            </ul></div>
+            <br><br><br><br><br><br><br><br><br><br> <br><br><br>
+            <ul>
+                <div id="Tarde2">
+                <h3><li>Septimos</li></h3>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+                <li>E</li>
+                <li>F</li>
+                <li>G</li>
+                <li>H</li>
+            </ul>
+        </div>
+    </div>
+        <script>
+            /*funciones para mostar y ocultar botones para mostrar la tabla de horario
+            M==tabla de horarios mañana
+            T==tabla de horarios tarde
+            boton1==boton de mostrar
+            boton==boton de ocultar*/
+            function mostrar(){
+                if(document.getElementById('Mañana').onselect=true){
+                    document.getElementById('M').style.display='none';
+                document.getElementById('T').style.display='none';
+                document.getElementById('boton1').style.display='block';
+                document.getElementById('boton').style.display='none';
+                }
+                if(document.getElementById('Tarde').onselect=true){
+                    document.getElementById('M').style.display='none';
+                document.getElementById('T').style.display='none';
+                document.getElementById('boton1').style.display='block';
+                document.getElementById('boton').style.display='none';
+                }
+            }
+            /*hay un pedillo con la funcion ocultar cuando muestro y oculto cambia de tabla osea de la tabla mañana a tabla tarde
+            en la otra tabla no hay pedos :)*/
+            //ocultar la represento como mostrar y se activa con boton1
+            function ocultar(){
+if(document.getElementById('Mañana').onclick=true) {
+    document.getElementById('M').style.display='block';
+                document.getElementById('T').style.display='none';
+                document.getElementById('boton').style.display='block';
+                document.getElementById('boton1').style.display='none';
+}
+if(document.getElementById('Tarde').onclick=true ){
+    document.getElementById('T').style.display='block';
+                document.getElementById('M').style.display='none';
+                document.getElementById('boton').style.display='block';
+                document.getElementById('boton1').style.display='none';
+}
+            
+            }
+            function MB(){ //turno mañana con radio button
+                document.getElementById('boton').style.display='block';
+                document.getElementById('boton1').style.display='none';
+                document.getElementById('Tarde1').style.display='none';
+                document.getElementById('Mañana1').style.display='block';
+                document.getElementById('Tarde2').style.display='none';
+                document.getElementById('Mañana2').style.display='block';
+if(document.getElementById('Mañana').onselect=true){
+    document.getElementById('M').style.display='block';
+    document.getElementById('T').style.display='none';
+}
+            }
+            function MM(){  //turno tarde con radio button
+                document.getElementById('boton').style.display='block';
+                document.getElementById('boton1').style.display='none';
+                document.getElementById('Mañana1').style.display='none';
+                document.getElementById('Tarde1').style.display='block';
+                document.getElementById('Mañana2').style.display='none';
+                document.getElementById('Tarde2').style.display='block';
+                if(document.getElementById('Mañana').onselect=true){
+    document.getElementById('T').style.display='block';
+    document.getElementById('M').style.display='none';
+}
+            }
+            
+        </script>
+    
+        </body>
+</html>
